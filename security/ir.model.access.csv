@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_sewa_motor,access.sewa.motor,model_sewa_motor,,1,1,1,1
+access_sewa_helm,access.sewa.helm,model_sewa_helm,,1,1,1,1
+access_sewa_order,access.sewa.order,model_sewa_order,,1,1,1,1
+access_sewa_ordermotordetail,access.sewa.ordermotordetail,model_sewa_ordermotordetail,,1,1,1,1
+access_sewa_orderhelmdetail,access.sewa.orderhelmdetail,model_sewa_orderhelmdetail,,1,1,1,1
+access_sewa_pengembalian,access.sewa.pengembalian,model_sewa_pengembalian,,1,1,1,1
+access_sewa_akunting,access.sewa.akunting,model_sewa_akunting,,1,1,1,1
+

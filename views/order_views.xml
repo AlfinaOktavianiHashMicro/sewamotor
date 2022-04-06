@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- sewa.order tree view -->
+    <record model="ir.ui.view" id="sewa_order_view_tree">
+        <field name="name">sewa Order</field>
+        <field name="model">sewa.order</field>
+        <field name="arch" type="xml">
+        
+            <tree>
+            
+                <!-- Add your fields here -->
+                <field name="name"/>   
+                <field name="pemesan"/> 
+                <field name="tanggal_pesan"/> 
+                <field name="tanggal_pengiriman"/>           
+                <field name="total"/>                
+                <field name="ordermotordetail_ids"/>
+                <field name="sudah_kembali"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- sewa.order form view -->
+    <record model="ir.ui.view" id="sewa_order_view_form">
+        <field name="name">Form Order</field>
+        <field name="model">sewa.order</field>
+        <field name="arch" type="xml">
+        
+            <form string="Order Detail">
+            
+                <sheet>                
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/> 
+                        <field name="pemesan"/>
+                        <field name="tanggal_pesan"/>
+                        <field name="tanggal_pengiriman"/>
+                        <field name="total"/>           
+                        <field name="sudah_kembali"/>                    
+                        <field name="ordermotordetail_ids">
+                            <tree editable='bottom'>
+                                <field name="motor_id"/>  
+                                <field name="harga_satuan"/> 
+                                <field name="qty"/> 
+                                <field name="harga" sum="Total"/>                                        
+                            </tree>
+                        </field>
+                        <field name="orderhelmdetail_ids">
+                            <tree editable='bottom'>
+                                <field name="helm_id"/>  
+                                <field name="harga_satuan"/> 
+                                <field name="qty"/> 
+                                <field name="harga" sum="Total"/>                                        
+                            </tree>
+                        </field>                                                   
+                    </group> 
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="sewa_order_action" model="ir.actions.act_window">
+        <field name="name">Order Motor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sewa.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem 
+        id="sewa_order_menu_act" 
+        name="Order Motor" 
+        parent="sewa_order_menu_categ" 
+        action="sewa_order_action" 
+        sequence="10"/>
+
+</odoo>

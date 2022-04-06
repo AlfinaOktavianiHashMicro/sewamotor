@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- sewa.motor tree view -->
+    <record id="sewa_motor_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Motor</field>
+        <field name="model">sewa.motor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="tipe"/>
+                <field name="stok"/>
+                <field name="harga"/>    
+            </tree>
+        </field>
+    </record>
+    <!-- sewa.motor form view -->
+    <record id="sewa_motor_view_form" model="ir.ui.view">
+        <field name="name">Form Motor</field>
+        <field name="model">sewa.motor</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="tipe"/>
+                        <field name="stok"/>
+                        <field name="harga"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- sewa.motor action window -->
+    <record id="sewa_motor_action" model="ir.actions.act_window">
+        <field name="name">Motor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sewa.motor</field>
+        <field name="view_mode">tree,form</field>        
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="sewa_motor_menu_act" 
+        name="Motor" 
+        parent="sewa_akomodasi_menu_categ" 
+        action="sewa_motor_action" 
+        sequence="40"/>
+
+</odoo>
